@@ -79,6 +79,8 @@ test:
 #
 production:
   <<: *default
+  host: <% ENV["DB_HOST"] %>
   database: test_cloud_build_production
-  username: test_cloud_build
-  password: <%= ENV["TEST_CLOUD_BUILD_DATABASE_PASSWORD"] %>
+  username: <% ENV["username"] %>
+  password: <%= ENV["DB_PASS"] %>
+  port: <% ENV["PORT"] %>
